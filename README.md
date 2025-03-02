@@ -1,75 +1,133 @@
-<header>
+Project Title: **An Integrated Machine Learning Approach to Understanding Fishing Fleet Dynamics in Croatia: Classification and Clustering for Economic Insights (2011-2022)**
 
-<!--
-  <<< Author notes: Course header >>>
-  Include a 1280×640 image, course title in sentence case, and a concise description in emphasis.
-  In your repository settings: enable template repository, add your 1280×640 social image, auto delete head branches.
-  Add your open source license, GitHub uses MIT license.
--->
 
-# Introduction to GitHub
+**Project Description**
+The project was initiated with an aim to analyze fishing fleet dynamics in Croatia through data cleaning, clustering, classification, and regression techniques. The predictions to be made here are namely Total Fishing Fleet Vessel Count classification into Low, Medium, and High, and the investigation for any hidden data patterns through unsupervised clustering analysis. The datasets were sourced from Eurostat, and they include economic indicators related to fisheries and aquaculture in Croatia.
 
-_Get started using GitHub in less than an hour._
+**Techniques Used**
 
-</header>
+**1. Data Cleaning and Preprocessing**
 
-<!--
-  <<< Author notes: Step 1 >>>
-  Choose 3-5 steps for your course.
-  The first step is always the hardest, so pick something easy!
-  Link to docs.github.com for further explanations.
-  Encourage users to open new tabs for steps!
--->
+The project integrated data from eight different datasets concerned with various aspects of Croatian fisheries, including:
 
-## Step 1: Create a branch
+Catch Weight (TLW)
+Input Weight for Capture-based Aquaculture (TLW)
+Aquaculture Production (TLW)
+Aquaculture Production at Juvenile Stage (MIO)
+Landings of Fishery Production (TPW)
+Fishing Fleet in unit (GT)
+Total Fishing Fleet Power (KW)
+Total Fishing Fleet Vessel Count (NR)
 
-_Welcome to "Introduction to GitHub"! :wave:_
+**Major Preprocessing Steps **
 
-**What is GitHub?**: GitHub is a collaboration platform that uses _[Git](https://docs.github.com/get-started/quickstart/github-glossary#git)_ for versioning. GitHub is a popular place to share and contribute to [open-source](https://docs.github.com/get-started/quickstart/github-glossary#open-source) software.
-<br>:tv: [Video: What is GitHub?](https://www.youtube.com/watch?v=pBy1zgt0XPc)
+Merging the datasets on TIME_PERIOD key.
+Dropping irrelevant columns against redundant data.
+Rounding up numerical values to 2 places after the decimal.
+Deleting duplicates and dealing with missing values (if present). 
+Outlier Detection and Treatment: Outliers were detected by the Interquartile Range (IQR) and capped.
+Regression Analysis (Prediction Task)
+**Aim**: Prediction of Total Fishing Fleet Vessel Count (NR) using selected numerical features.
+**Selected Features:**
 
-**What is a repository?**: A _[repository](https://docs.github.com/get-started/quickstart/github-glossary#repository)_ is a project containing files and folders. A repository tracks versions of files and folders. For more information, see "[About repositories](https://docs.github.com/en/repositories/creating-and-managing-repositories/about-repositories)" from GitHub Docs.
+Fishing Fleet in unit (GT)
+Catch Weight (TLW) 
+Aquaculture Production at Juvenile Stage (MIO)
+Input Weight for Capture-based Aquaculture (TLW)
+Landings of Fishery Production (TPW)
+Total Fishing Fleet Power (KW)
 
-**What is a branch?**: A _[branch](https://docs.github.com/en/get-started/quickstart/github-glossary#branch)_ is a parallel version of your repository. By default, your repository has one branch named `main` and it is considered to be the definitive branch. Creating additional branches allows you to copy the `main` branch of your repository and safely make any changes without disrupting the main project. Many people use branches to work on specific features without affecting any other parts of the project.
+The following algorithms were tried:
 
-Branches allow you to separate your work from the `main` branch. In other words, everyone's work is safe while you contribute. For more information, see "[About branches](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches)".
+Linear Regression,
+Random Forest Regressor,
+Gradient Boosting Regressor.
 
-**What is a profile README?**: A _[profile README](https://docs.github.com/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/managing-your-profile-readme)_ is essentially an "About me" section on your GitHub profile where you can share information about yourself with the community on GitHub.com. GitHub shows your profile README at the top of your profile page. For more information, see "[Managing your profile README](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/managing-your-profile-readme)".
+**Evaluation Metrics:**
 
-![profile-readme-example](/images/profile-readme-example.png)
+Mean Squared Error (MSE), 
+R^2 Score.
 
-### :keyboard: Activity: Your first branch
+**The greatest model:**
 
-1. Open a new browser tab and navigate to your newly made repository. Then, work on the steps in your second tab while you read the instructions in this tab.
-2. Navigate to the **< > Code** tab in the header menu of your repository.
+Gradient Boosting Regressor where R² = 0.9174.
 
-   ![code-tab](/images/code-tab.png)
+**3. Classification Analysis (Categorization Task)**
+**Goal**: Classify total fishing fleet vessel counts (NR) into:
 
-3. Click on the **main** branch drop-down.
+Low
+Medium
+High
+**Methodology:**
 
-   ![main-branch-dropdown](/images/main-branch-dropdown.png)
+Percentile-based binning (33% quantiles) was applied to form 3 fleet categories.
+Top features selected for classification based on correlation analysis:
+Fishing fleet in unit (GT)
+Landings of fishery productions (TPW)
+Total fishing fleet power (KW)
+**Algorithms applied:**
 
-4. In the field, name your branch `my-first-branch`. In this case, the name must be `my-first-branch` to trigger the course workflow.
-5. Click **Create branch: my-first-branch** to create your branch.
+Support vector machine (SVM) - One-vs-Rest-multi-class strategy
+Naive bayes
+Logistic regression
+K-Nearest Neighbors (KNN)
+**Evaluation Metrics:**
 
-   ![create-branch-button](/images/create-branch-button.png)
+Accuracy
+F1 Score
+Precision
+Recall
+Confusion Matrix
+ROC Curve-multi-class
+**Best Model:**
+✅ **Logistic Regression** was the most balanced between accuracy, precision, recall, and F1 score.
 
-   The branch will automatically switch to the one you have just created.
-   The **main** branch drop-down bar will reflect your new branch and display the new branch name.
+**4. Clustering Analysis (Unsupervised Pattern Discovery)**
+ The objective is to explore for natural groupings or hidden patterns in the fleet data so as to increase the understanding concerning economic behavior. 
 
-6. Wait about 20 seconds then refresh this page (the one you're following instructions from). [GitHub Actions](https://docs.github.com/en/actions) will automatically update to the next step.
+**Approach:**
 
-<footer>
+The three most correlated features selected for clustering:
 
-<!--
-  <<< Author notes: Footer >>>
-  Add a link to get support, GitHub status page, code of conduct, license link.
--->
+Total Fishing Fleet Power (KW)
+Fishery Production Landings (TPW)
+Fishing Fleet in unit (GT)
 
----
+Principal Component Analysis (PCA) was performed for dimensionality reduction before clustering.
 
-Get help: [Post in our discussion board](https://github.com/orgs/skills/discussions/categories/introduction-to-github) &bull; [Review the GitHub status page](https://www.githubstatus.com/)
+K-means Clustering was run to cluster the data.
 
-&copy; 2024 GitHub &bull; [Code of Conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md) &bull; [MIT License](https://gh.io/mit)
+**Cluster Validation Techniques:**
 
-</footer>
+The Elbow Method: To find the optimal number of clusters.  
+Silhouette Score: To provide evidence for clustering quality.  
+
+**Key Finding:**
+✅The number of optimum clusters was 3, which fits the real-world intuition about the different fleet size groups (small, medium, large).
+
+**Tools & Libraries Used**
+
+Python 3 (Core language)
+Pandas (Data Manipulation)
+NumPy (Computing)
+Matplotlib and Seaborn (Visualization)
+Scikit-learn (ML + Clustering)
+GridSearchCV (Hyperparameter Tuning)
+SciPy (Statistical Analysis)
+PCA (from sklearn.decomposition) (Dimensionality Reduction)
+
+**Folder Structure**
+/project-folder/
+|-- datasets/
+|   |-- dataset_one.csv
+|   |-- dataset_two.csv
+|   |-- ...
+|   |-- dataset_six.csv
+|-- processed_data/
+|   |-- combined_cleaned_dataset.csv
+|-- scripts/
+|   |-- data_cleaning.py
+|   |-- regression_analysis.py
+|   |-- classification_analysis.py
+|   |-- clustering_analysis.py
+|-- README.md
