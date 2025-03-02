@@ -158,32 +158,4 @@ SciPy (Statistical Analysis)
 
 PCA (from sklearn.decomposition) (Dimensionality Reduction)
 
-**Folder Structure**
 
-/project-folder/
-
-|-- datasets/
-
-|   |-- dataset_one.csv
-
-|   |-- dataset_two.csv
-
-|   |-- ...
-
-|   |-- dataset_six.csv
-
-|-- processed_data/
-
-|   |-- combined_cleaned_dataset.csv
-
-|-- scripts/
-
-|   |-- data_cleaning.py
-
-|   |-- regression_analysis.py
-
-|   |-- classification_analysis.py
-
-|   |-- clustering_analysis.py
-
-|-- README.md
