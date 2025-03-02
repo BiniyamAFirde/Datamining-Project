@@ -44,6 +44,7 @@ Linear Regression,
 Random Forest Regressor,
 Gradient Boosting Regressor.
 
+
 **Evaluation Metrics:**
 
 Mean Squared Error (MSE), 
@@ -59,6 +60,7 @@ Gradient Boosting Regressor where R² = 0.9174.
 Low
 Medium
 High
+
 **Methodology:**
 
 Percentile-based binning (33% quantiles) was applied to form 3 fleet categories.
@@ -72,6 +74,7 @@ Support vector machine (SVM) - One-vs-Rest-multi-class strategy
 Naive bayes
 Logistic regression
 K-Nearest Neighbors (KNN)
+
 **Evaluation Metrics:**
 
 Accuracy
@@ -104,6 +107,7 @@ The Elbow Method: To find the optimal number of clusters.
 Silhouette Score: To provide evidence for clustering quality.  
 
 **Key Finding:**
+
 ✅The number of optimum clusters was 3, which fits the real-world intuition about the different fleet size groups (small, medium, large).
 
 **Tools & Libraries Used**
