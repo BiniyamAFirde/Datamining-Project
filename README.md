@@ -83,10 +83,13 @@ Precision
 Recall
 Confusion Matrix
 ROC Curve-multi-class
+
 **Best Model:**
+
 ✅ **Logistic Regression** was the most balanced between accuracy, precision, recall, and F1 score.
 
 **4. Clustering Analysis (Unsupervised Pattern Discovery)**
+
  The objective is to explore for natural groupings or hidden patterns in the fleet data so as to increase the understanding concerning economic behavior. 
 
 **Approach:**
