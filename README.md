@@ -28,6 +28,7 @@ Deleting duplicates and dealing with missing values (if present).
 Outlier Detection and Treatment: Outliers were detected by the Interquartile Range (IQR) and capped.
 Regression Analysis (Prediction Task)
 **Aim**: Prediction of Total Fishing Fleet Vessel Count (NR) using selected numerical features.
+
 **Selected Features:**
 
 Fishing Fleet in unit (GT)
