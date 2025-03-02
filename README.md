@@ -1,4 +1,6 @@
-Project Title: **An Integrated Machine Learning Approach to Understanding Fishing Fleet Dynamics in Croatia: Classification and Clustering for Economic Insights (2011-2022)**
+Project Title: 
+
+**An Integrated Machine Learning Approach to Understanding Fishing Fleet Dynamics in Croatia: Classification and Clustering for Economic Insights (2011-2022)**
 
 
 **Project Description**
@@ -11,12 +13,19 @@ The project was initiated with an aim to analyze fishing fleet dynamics in Croat
 The project integrated data from eight different datasets concerned with various aspects of Croatian fisheries, including:
 
 Catch Weight (TLW)
+
 Input Weight for Capture-based Aquaculture (TLW)
+
 Aquaculture Production (TLW)
+
 Aquaculture Production at Juvenile Stage (MIO)
+
 Landings of Fishery Production (TPW)
+
 Fishing Fleet in unit (GT)
+
 Total Fishing Fleet Power (KW)
+
 Total Fishing Fleet Vessel Count (NR)
 
 **Major Preprocessing Steps **
@@ -32,10 +41,15 @@ Regression Analysis (Prediction Task)
 **Selected Features:**
 
 Fishing Fleet in unit (GT)
+
 Catch Weight (TLW) 
+
 Aquaculture Production at Juvenile Stage (MIO)
+
 Input Weight for Capture-based Aquaculture (TLW)
+
 Landings of Fishery Production (TPW)
+
 Total Fishing Fleet Power (KW)
 
 The following algorithms were tried:
@@ -55,6 +69,7 @@ R^2 Score.
 Gradient Boosting Regressor where R² = 0.9174.
 
 **3. Classification Analysis (Categorization Task)**
+
 **Goal**: Classify total fishing fleet vessel counts (NR) into:
 
 Low
@@ -64,10 +79,15 @@ High
 **Methodology:**
 
 Percentile-based binning (33% quantiles) was applied to form 3 fleet categories.
+
 Top features selected for classification based on correlation analysis:
+
 Fishing fleet in unit (GT)
+
 Landings of fishery productions (TPW)
+
 Total fishing fleet power (KW)
+
 **Algorithms applied:**
 
 Support vector machine (SVM) - One-vs-Rest-multi-class strategy
@@ -78,10 +98,15 @@ K-Nearest Neighbors (KNN)
 **Evaluation Metrics:**
 
 Accuracy
+
 F1 Score
+
 Precision
+
 Recall
+
 Confusion Matrix
+
 ROC Curve-multi-class
 
 **Best Model:**
@@ -97,7 +122,9 @@ ROC Curve-multi-class
 The three most correlated features selected for clustering:
 
 Total Fishing Fleet Power (KW)
+
 Fishery Production Landings (TPW)
+
 Fishing Fleet in unit (GT)
 
 Principal Component Analysis (PCA) was performed for dimensionality reduction before clustering.
@@ -116,26 +143,47 @@ Silhouette Score: To provide evidence for clustering quality.
 **Tools & Libraries Used**
 
 Python 3 (Core language)
+
 Pandas (Data Manipulation)
+
 NumPy (Computing)
+
 Matplotlib and Seaborn (Visualization)
+
 Scikit-learn (ML + Clustering)
+
 GridSearchCV (Hyperparameter Tuning)
+
 SciPy (Statistical Analysis)
+
 PCA (from sklearn.decomposition) (Dimensionality Reduction)
 
 **Folder Structure**
+
 /project-folder/
+
 |-- datasets/
+
 |   |-- dataset_one.csv
+
 |   |-- dataset_two.csv
+
 |   |-- ...
+
 |   |-- dataset_six.csv
+
 |-- processed_data/
+
 |   |-- combined_cleaned_dataset.csv
+
 |-- scripts/
+
 |   |-- data_cleaning.py
+
 |   |-- regression_analysis.py
+
 |   |-- classification_analysis.py
+
 |   |-- clustering_analysis.py
+
 |-- README.md
